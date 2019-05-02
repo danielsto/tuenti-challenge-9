@@ -1,0 +1,100 @@
+Case #1: c
+Case #2: t
+Case #3: v
+Case #4: t w
+Case #5: AMBIGUOUS
+Case #6: AMBIGUOUS
+Case #7: u a
+Case #8: AMBIGUOUS
+Case #9: AMBIGUOUS
+Case #10: t f v
+Case #11: h u j
+Case #12: AMBIGUOUS
+Case #13: AMBIGUOUS
+Case #14: AMBIGUOUS
+Case #15: u d
+Case #16: AMBIGUOUS
+Case #17: g d
+Case #18: t o w
+Case #19: b x c y r
+Case #20: i o w f
+Case #21: AMBIGUOUS
+Case #22: k b
+Case #23: b j h g l a p
+Case #24: AMBIGUOUS
+Case #25: AMBIGUOUS
+Case #26: m n t g
+Case #27: p i u
+Case #28: a k e i y g c m x
+Case #29: AMBIGUOUS
+Case #30: AMBIGUOUS
+Case #31: v l o
+Case #32: w c q u s h a d g
+Case #33: r i v t k
+Case #34: b e z
+Case #35: c a
+Case #36: AMBIGUOUS
+Case #37: n
+Case #38: p d y h t
+Case #39: y w t z
+Case #40: i e
+Case #41: l t a
+Case #42: g c
+Case #43: n q v k
+Case #44: q p t r
+Case #45: i y t
+Case #46: v s g h
+Case #47: j e a u q
+Case #48: m g u f y j
+Case #49: k r f u
+Case #50: e w n k t d o z l
+Case #51: b r v
+Case #52: a x r m k l
+Case #53: s c
+Case #54: AMBIGUOUS
+Case #55: AMBIGUOUS
+Case #56: p y z
+Case #57: b f
+Case #58: m i r c w a n
+Case #59: p f x m
+Case #60: e b
+Case #61: s h l u
+Case #62: x n
+Case #63: e k h s y
+Case #64: a h
+Case #65: v x g q e a
+Case #66: g b i s
+Case #67: x q v e
+Case #68: p b m j
+Case #69: a d o r w h k
+Case #70: t r y x
+Case #71: o q z
+Case #72: v
+Case #73: x a r n v q z
+Case #74: g p
+Case #75: u v p d
+Case #76: d f r x j
+Case #77: AMBIGUOUS
+Case #78: q
+Case #79: s c a v f q
+Case #80: u o f
+Case #81: u z a n b j
+Case #82: t m
+Case #83: r a p j
+Case #84: s x g
+Case #85: x t q n
+Case #86: p i v s m f
+Case #87: j g p
+Case #88: q t d r
+Case #89: t s b l g
+Case #90: z u o f
+Case #91: l
+Case #92: j k w a
+Case #93: q t v e d
+Case #94: j i y d
+Case #95: f r i a s
+Case #96: l i h w c
+Case #97: g u y x p
+Case #98: d w q t h j
+Case #99: c s b e m
+Case #100: q p m a k
