@@ -1,4 +1,6 @@
+import itertools
 import os
+import networkx
 
 in_file_path = os.path.join(os.path.dirname(__file__), "testInput")
 out_file_path = os.path.join(os.path.dirname(__file__), "testOutput.txt")
@@ -36,6 +38,7 @@ def TopologicalSort(graph):
 def build_graph(a):
     # a = ['u', 'uud', 'udu', 'd', 'du', 'duu', 'ddu']
     # a = ['mm', 'mmng', 'mtgt', 'nnntng', 'ng', 'tn', 'tgt', 'g', 'gg', 'ggg']
+    # a = ['tvft', 'v', 'vftf']
     graph = {}
     # Creating nodes
     for word in a:
@@ -48,16 +51,42 @@ def build_graph(a):
 
     for i in range(len(a) - 1):
         word1 = a[i]
-        word2 = a[i+1]
+        word2 = a[i + 1]
 
         for j in range(min(len(word1), len(word2))):
+            # print(word1, word2)
             if word1[j] != word2[j]:
-                print(graph)
-                # print(word1[j], word2[j],  word1[j] not in graph[word2[j]])
-                if len(graph[word1[j]]) == 0 and  word1[j] not in graph[word2[j]]:
-                    graph[word1[j]].append(word2[j])
-    # print(graph)
+                graph[word1[j]].append(word2[j])
+                # print(word1[j], '<', word2[j])
+                break
+            # print(graph)
+
     return graph
+
+
+def check_duplicates(list):
+    if len(list) != len(set(list)):
+        return True
+    else:
+        return False
+
+
+def check_ambiguity(o):
+    # There should only be one endnode
+    # There should only be one startnode
+    endnodes = 0
+    non_startnodes = []
+    duplicates = False
+    for key in o:
+        if len(o[key]) == 0:
+            endnodes += 1
+        non_startnodes.append(o[key])
+
+    non_startnodes = set(list(itertools.chain.from_iterable(non_startnodes)))
+    startnodes = len(o) - len(non_startnodes)
+    #print(startnodes)
+    if endnodes != 1 or startnodes != 1 or duplicates:
+        return True
 
 
 with open(in_file_path, 'r') as infile:
@@ -69,13 +98,25 @@ with open(in_file_path, 'r') as infile:
             alphabet = []
             for l in range(lines):
                 alphabet.append(infile.readline().rstrip())
-            graph = build_graph(alphabet)
 
-            order = TopologicalSort(graph)
+            if case in range(0, 100):
+                graph = build_graph(alphabet)
+                #print(alphabet)
+                #print(graph)
+                graph = networkx.DiGraph(graph)
+                #print(graph)
+                order = networkx.all_topological_sorts(graph)
+                order = list(order)
+                #print(order, len(order))
+                if len(order) > 1:
+                    order = "AMBIGUOUS"
+                else:
+                    if len(order[0]) < 1:
+                        order = "AMBIGUOUS"
+                    else:
+                        order = " ".join(order[0])
+                print(order)
 
-            if len(order) > 0:
-                order = " ".join(TopologicalSort(graph))
-            else:
-                order = "AMBIGUOUS"
-
-            outfile.write("Case #" + str(case + 1) + ": " + order + "\n")
+                if check_ambiguity(graph):
+                    order = "AMBIGUOUS"
+                outfile.write("Case #" + str(case + 1) + ": " + order + "\n")
